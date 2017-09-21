@@ -1,0 +1,88 @@
+#############################################################################
+# Made by Anthony : https://github.com/iamtonysoft/ragnarok-macros
+# Accepting Donations : https://www.paypal.me/iamtonysoft
+# Slave Priest v1.0
+#
+# Simple Guide: copy and paste this inside your control/macros.txt
+#
+# Collection Of Macros
+# 1.) Set Priest Config (Note: set your follow target)
+# 2.) Follow Master
+# 3.) TP Back to Savepoint
+#
+#############################################################################
+
+#_________________________________________#
+# 										  
+#	1. SET PRIEST CONFIG     	  
+#_________________________________________#
+
+automacro SetPriestConfig {
+	run-once 1
+	exclusive 1
+	call {
+		do conf follow 1
+		pause 1
+		do conf followTarget  # Set Follow Target
+		pause 1
+		do conf followBot 0
+		pause 1
+		do conf route_step 18
+	}
+	timeout 3600
+}
+
+#_________________________________________#
+# 										  
+#	2. FOLLOW MASTER     	  
+#_________________________________________#
+
+automacro FindMaster {
+	console /^I lost my master/
+	call {
+		$master = @config (followTarget)
+		do pm "$master" x $.map $.pos
+	}
+	timeout 3
+}
+
+automacro CalculateRoute {
+	console /^Calculating route to find master/
+	call {
+		$master = @config (followTarget)
+		do pm "$master" x $.map $.pos
+	}
+	timeout 3
+}
+
+automacro GoToMaster {
+	pm /x (.*) (.*) (.*)/
+	call {
+		$pm = $.lastpm
+		if ($pm != $master) stop
+		do move $.lastMatch1 $.lastMatch2 $.lastMatch3
+	}
+}
+
+automacro FoundMaster {
+	console /^Found my master!/
+	call {
+		do pm "$master" clear
+	}
+	timeout 5
+}
+
+#_________________________________________#
+# 										  
+#	3. TP BACK TO SAVEPOINT     	  
+#_________________________________________#
+
+automacro MasterIsDead {
+	pm /Your master is dead/
+	call {
+		$pm = $.lastpm
+		if ($pm != $master) stop
+		do respawn
+	}
+	timeout 5
+}
