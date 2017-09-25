@@ -1,12 +1,4 @@
-useSelf_item Novice Potion {
-	hp < 70%
-}
-
-useSelf_item Red Potion, Orange Potion, Yellow Potion, White Potion {
-	hp < 70%
-}
-
-useSelf_item Fresh Fish {
+useSelf_item Novice Potion, Red Potion, Orange Potion, Yellow Potion, White Potion, Fresh Fish {
 	hp < 70%
 }
 
