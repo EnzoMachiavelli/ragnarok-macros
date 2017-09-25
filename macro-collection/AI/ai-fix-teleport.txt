@@ -25,7 +25,6 @@ automacro NoTeleSkill {
 			do conf route_randomWalk 1
 			do conf route_teleport 0		
 		]
-		lock iTele
 		log iTele: Locked!
 	}
 	timeout 180
