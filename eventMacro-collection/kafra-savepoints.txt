@@ -19,7 +19,7 @@ macro ChangeSavePoints {
 	$storageOption = 1 
 	$sellOption = 0
 	
-	$successLog = KafraSavePoints: set saveMap to &config (saveMap)
+	$successLog = KafraSavePoints: saveMap was set
 	$errorLog = KafraSavePoints: saveMap was already set!
 	
 	switch ($.InMapLast) {
