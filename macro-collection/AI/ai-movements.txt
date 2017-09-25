@@ -1,0 +1,15 @@
+#______________________________________________________#
+# 										  			   
+# RANDOM BODY MOVEMENTS WHEN SIT/STAND  		   
+#______________________________________________________#
+
+automacro RandomBodyMovements {
+	console /^You are sitting|^You are standing/i
+	exclusive 1
+	call {
+		do look @rand(0,7) @rand(0,2)
+		log RandomBodyMovement: You are now facing random direction
+		stop
+	}
+	timeout 5
+}

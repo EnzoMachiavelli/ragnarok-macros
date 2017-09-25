@@ -1,0 +1,24 @@
+#______________________________________________________________________________________________________
+# 
+# Made by Anthony : https://github.com/iamtonysoft/ragnarok-macros									   
+# Accepting Donations : https://www.paypal.me/iamtonysoft											   
+# Event Macro Collection v1.4.1																				   	   
+#______________________________________________________________________________________________________
+#																									   		
+# Simple Guide : copy and paste this inside your control/eventMacros.txt
+#				 copy and paste the eventMacro-collection folder inside your control folder							   
+#
+#      Exclude : just add # at the beginning of the line ex. #<space>!include 
+#______________________________________________________________________________________________________
+
+# Grinding Spots (triggers when entering the town)
+!include eventMacro-collection/grinding-spot.txt
+
+# Tele or Walk
+!include eventMacro-collection/tele-walk.txt
+
+# Save Points (useful for grinding no need for autostorage and autosell config)
+!include eventMacro-collection/kafra-savepoints.txt
+
+# Avoid Traps
+!include eventMacro-collection/avoid-traps.txt

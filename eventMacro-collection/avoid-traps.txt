@@ -1,0 +1,17 @@
+#_________________________________________#
+# 										  
+# AVOID TRAPS   		         	  
+#_________________________________________#
+
+automacro TrapMaps {
+	InMap yuno, prt_in 240 139
+	exclusive 1
+	run-once 1
+	macro_delay 3
+	call {
+		do move stop
+		do respawn
+		log TrapMap: Initiated!
+		release TrapMaps 
+	}
+}

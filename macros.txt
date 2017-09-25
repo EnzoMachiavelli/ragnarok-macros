@@ -1,0 +1,33 @@
+#______________________________________________________________________________________________________
+# 
+# Made by Anthony : https://github.com/iamtonysoft/ragnarok-macros									   
+# Accepting Donations : https://www.paypal.me/iamtonysoft											   
+# Macro Collection v1.4.1																			   	   
+#______________________________________________________________________________________________________
+#																									   		
+# Simple Guide : copy and paste the content of this text file inside your control/macros.txt
+#				 copy and paste the macro-collection folder inside your control folder
+#								   
+#    Important : remove the # on the lines i commented out inside ai-response.txt to make it work on 
+#			     each variables like $pubMessage and $pmCaseN
+#
+#       Notice : reply with c = public chat, e = emotion 
+#		         public message ex : $pubMessage = @random ("c thx","c wow thx")
+#		         private message ex : $pmCaseN = pm "$.lastpm" @random ("dont accuse me","bot my ass")
+#		         DO NOT JUST COPY AND PASTE! Construct your own answers and emotes  
+#
+#      Exclude : just add # at the beginning of the line ex. #<space>!include  							 	   
+#_____________________________________________________________________________________________________
+
+# AI Actions
+!include macro-collection/AI/ai-fix-teleport.txt
+!include macro-collection/AI/ai-movements.txt
+# !include macro-collection/AI/ai-release-timeouts.txt
+# !include macro-collection/AI/ai-player-buffs.txt
+# !include macro-collection/AI/ai-player-skills.txt
+# !include macro-collection/AI/ai-pm-collections.txt
+# !include macro-collection/AI/ai-red-flags.txt
+
+# Party Settings
+# !include macro-collection/Party/party-slave-master.txt
+# !include macro-collection/Party/party-slave-priest.txt

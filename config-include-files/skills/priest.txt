@@ -1,0 +1,94 @@
+useSelf_skill Heal {
+	lvl 10
+	hp < 80%
+}
+
+useSelf_skill Increase AGI {
+	lvl 10
+	sp > 10%
+	whenStatusInactive Increase AGI
+	timeout 30
+}
+
+useSelf_skill Blessing {
+	lvl 10
+	sp > 10%
+	whenStatusInactive Blessing
+	timeout 30
+}
+
+useSelf_skill Gloria {
+	lvl 1
+	sp > 30%
+	notInTown 1
+	whenStatusInactive Gloria
+	timeout 180
+}
+
+useSelf_skill Angelus {
+	lvl 10
+	whenStatusInactive Angelus
+	sp > 10%
+}
+
+useSelf_skill Kyrie Eleison {
+	lvl 10
+	sp > 20%
+	stopWhenHit 1
+	notWhileSitting 1
+	notInTown 1
+	whenStatusInactive Kyrie Eleison
+	timeout 240
+}
+
+useSelf_skill Magnificat {
+	lvl 3
+	sp > 10%
+	stopWhenHit 1
+	notWhileSitting 1
+	notInTown 1
+	whenStatusInactive Magnificat
+	timeout 30
+}
+
+partySkill Heal {
+	lvl 10
+	sp > 10%
+	target iMac,Tony Corleone
+	target_hp < 80%
+}
+
+partySkill Increase AGI {
+	lvl 10
+	sp > 45
+	target iMac,Tony Corleone
+	target_whenStatusInactive Increase AGI
+	timeout 120
+}
+
+partySkill Blessing {
+	lvl 10
+	sp > 64
+	target iMac,Tony Corleone
+	target_whenStatusInactive Blessing
+	timeout 120
+}
+
+partySkill Kyrie Eleison {
+	lvl 10
+	sp > 20%
+	target iMac,Tony Corleone
+	target_whenStatusInactive Kyrie Eleison
+	stopWhenHit 1
+	notWhileSitting 1
+	notInTown 1
+	timeout 240
+}
+
+partySkill Impositio Manus {
+	lvl 10
+	sp > 25%
+	target iMac,Tony Corleone
+	target_whenStatusInactive Impositio Manus
+	timeout 30
+}

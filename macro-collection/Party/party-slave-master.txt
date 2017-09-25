@@ -1,53 +1,43 @@
-#############################################################################
-# Made by Anthony : https://github.com/iamtonysoft/ragnarok-macros
-# Accepting Donations : https://www.paypal.me/iamtonysoft
-# Slave Master v1.0
-#
-# Simple Guide: copy and paste this inside your control/macros.txt
-#
-# Collection Of Macros
-# 1.) Set Master Config
-# 2.) I am Dead (Note: set your priest name)
-# 3.) Find Slave
-# 4.) Clear Route
-#
-#############################################################################
-
 #_________________________________________#
 # 										  
-#	1. SET MASTER CONFIG
+# SET MASTER CONFIG
 #_________________________________________#
 
 automacro SetMasterConfig {
 	run-once 1
 	exclusive 1
 	call {
-		do conf route_step 8
-		pause 1
-		do conf pauseCharServer 1
-		pause 1
-		do conf pauseMapServer 1
+		[
+			do conf route_step 8
+			do conf pauseCharServer 1
+			do conf pauseMapServer 1
+		]
+		log SetMasterConfig: Initiated!
+		lock SetMasterConfig
 	}
-	timeout 3600
 }
 
 #_________________________________________#
 # 										  
-#	2. I AM DEAD
+# I AM DEAD
 #_________________________________________#
 
 automacro IamDead {
 	console /^You are now: Dead/
 	call {
-		$priestName = "_" # set your priest name here
-		do pm $priestName Your master is dead
+		log IamDead: PM'ed Slave!
+		
+		# Set Your Priest Name Here
+		$priestName = * 	 
+		
+		do pm "$priestName" Your master is dead
 	}
 	timeout 3
 }
 
 #_________________________________________#
 # 										  
-#	2. Find Slave
+# FIND SLAVE
 #_________________________________________#
 
 automacro FindSlave {
@@ -57,13 +47,16 @@ automacro FindSlave {
 		$slaveMapX = $.lastMatch2
 		$slaveMapY = $.lastMatch3
 		$myMap = $.map
+		
 		switch ($slaveMap) {
 			case (== $myMap) {
 				do pm "$.lastpm" x $.map $.pos
 				do move $slaveMap $slaveMapX $slaveMapY
+				log PM Coordinates: Slave: $slaveMap $slaveMapX $slaveMapY
 			} 
 			else {
 				do pm "$.lastpm" x $.map $.pos
+				log PM Coordinates: Master: $.map $.pos
 				stop
 			}
 		}	
@@ -73,13 +66,14 @@ automacro FindSlave {
 
 #_________________________________________#
 # 										  
-#	4. Clear Route
+# Clear Route
 #_________________________________________#
 
 automacro Clear {
 	pm /clear/
 	call {
 		do eval AI::clear("move", "route");
+		log Route: Cleared!
 	}
 	timeout 3
 }

@@ -1,0 +1,35 @@
+useSelf_item Novice Potion {
+	hp < 70%
+}
+
+useSelf_item Red Potion, Orange Potion, Yellow Potion, White Potion {
+	hp < 70%
+}
+
+useSelf_item Fresh Fish {
+	hp < 70%
+}
+
+useSelf_item Strawberry, Blue Potion, Blue Herb {
+	sp < 60%
+}
+
+useSelf_item Apple, Banana, Carrot, Potato{
+	hp < 90%
+}
+
+useSelf_item Meat {
+	hp < 75%
+}
+
+useSelf_item Advanced WoE Supply Box {
+	inInventory WoE White Potion < 1
+}
+
+useSelf_item WoE White Potion {
+	hp < 65%
+}
+
+useSelf_item WoE Blue Potion {
+	sp < 60%
+}

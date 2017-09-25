@@ -1,0 +1,69 @@
+attackSkillSlot Cart Revolution {
+	lvl 1
+	dist 1.5
+	sp > 10%
+	aggressives > 3
+}
+
+attackSkillSlot Hammer Fall {
+	lvl 5
+	onAction attack
+	maxUses 1
+	maxAttempts 5
+	target_WhenStatusInactive Stunned
+}
+
+useSelf_skill Crazy Uproar {
+	lvl 1
+	sp > 10%
+	onAction Attack
+	whenStatusInactive Crazy Uproar
+	inLockOnly 0
+	notWhileSitting 1
+	notInTown 1
+}
+
+useSelf_skill Adrenaline Rush {
+	lvl 5
+	sp > 10%
+	whenStatusInactive Adrenaline Rush
+	inLockOnly 0
+	notWhileSitting 1
+	notInTown 1
+}
+
+useSelf_skill Power Thrust {
+	lvl 5
+	sp > 10%
+	whenStatusInactive Power Thrust
+	inLockOnly 0
+	notWhileSitting 1
+	notInTown 1
+}
+
+useSelf_skill Weapon Perfection {
+	lvl 5
+	sp > 10%
+	whenStatusInactive Weapon Perfection
+	inLockOnly 0
+	notWhileSitting 1
+	notInTown 1
+}
+
+useSelf_skill Power Maximize {
+	lvl 5
+	sp > 50%
+	whenStatusInactive Power Maximize
+	inLockOnly 0
+	notWhileSitting 1
+	notInTown 1
+}
+
+useSelf_skill Power Maximize {
+	lvl 5
+	sp < 30%
+	whenStatusActive Power Maximize
+	inLockOnly 0
+	notWhileSitting 1
+	notInTown 1
+}

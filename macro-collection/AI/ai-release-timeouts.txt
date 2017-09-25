@@ -1,0 +1,17 @@
+#______________________________________________________#
+# 										  			   
+# RELEASE AI RESPONSE AUTOMACRO's 	 		   
+# BY SETTING TIMEOUT IN SECONDS
+#______________________________________________________#
+
+automacro ReleaseResponse {
+	timeout 3600
+	exclusive 1
+	macro_delay 1
+	call {
+		release all
+		log AI Response: Released!
+		stop
+	}
+}
+

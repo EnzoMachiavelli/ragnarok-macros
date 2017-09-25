@@ -1,0 +1,32 @@
+#___________________________________________________#
+# 										  			
+# FIX TELEPORT SKILL     	  					
+#___________________________________________________#
+
+automacro FixTeleportSkill {
+	console /Skill Teleport failed: Insufficient SP|any work in progress/i
+	exclusive 1
+	macro_delay 2
+	call {
+		do move stop
+		do warp cancel
+		log FixTeleportSkill: Spam Fixed!
+	}
+	timeout 5
+}
+
+automacro NoTeleSkill {
+	console /You don't have the Teleport skill or a Fly Wing/i
+	exclusive 1
+	call {
+		[
+			do conf teleportAuto_idle 0
+			do conf teleportAuto_useSkill none
+			do conf route_randomWalk 1
+			do conf route_teleport 0		
+		]
+		lock iTele
+		log iTele: Locked!
+	}
+	timeout 180
+}

@@ -1,0 +1,36 @@
+#___________________________________________________#
+# 										  			
+# TELE OR WALK			
+#___________________________________________________#
+
+automacro iWalk {
+	CurrentSP < 10%
+	exclusive 1
+	call {
+		[
+			do conf teleportAuto_idle 0
+			do conf teleportAuto_useSkill none
+			do conf route_randomWalk 1
+			do conf route_teleport 0		
+		]
+		log iWalk: Initiated!
+		lock iWalk
+		release iTele
+	}
+}
+
+automacro iTele {
+	CurrentSP > 10%
+	exclusive 1
+	call {
+		[
+			do conf teleportAuto_idle 1
+			do conf teleportAuto_useSkill 1
+			do conf route_randomWalk 0
+			do conf route_teleport 1
+		]		
+		log iTele: Initiated!
+		lock iTele
+		release iWalk
+	}
+}

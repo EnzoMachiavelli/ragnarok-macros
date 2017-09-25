@@ -1,0 +1,111 @@
+#_______________________________________________________________#
+# 										  						
+# CHANGE GRINDING SPOT      	  							
+#   															
+# NOTICE : Do not forget to set your lockMap lvl are based 		
+#		   between this e.g (base lvl 10 >= betwen <= 25)		
+#_______________________________________________________________#
+
+automacro GrindingTime {
+	BaseLevel >= 10
+	JobIDNot 0
+	exclusive 1
+	run-once 1
+	macro_delay 2
+	call ChangeGrindMaps
+}
+
+macro ChangeGrindMaps {
+	$LVL25 = prt_fild07; $LVL35 = mjolnir_09; $LVL45 = mjolnir_08; $LVL55 = gef_fild02; 
+	$LVL65 = mjolnir_10; $LVL75 = gef_fild14; $LVL85 = c_tower2; $LVL99 = none; 
+	
+	$successLog = GrindingTime: set lockMap to &config(lockMap)
+	$errorLog = GrindingTime: lockMap &config(lockMap) was already set!
+	
+	switch ($.BaseLevelLast) {
+		case (<= 25) {
+			if (&config(lockMap) != $LVL25) {
+				do conf lockMap $LVL25
+				log $successLog
+				release GrindingTime
+			} else {
+				log $errorLog
+				stop
+			}
+		}
+		case (<= 35) {
+			if (&config(lockMap) != $LVL35) {
+				do conf lockMap $LVL35
+				log $successLog
+				release GrindingTime
+			} else {
+				log $errorLog
+				stop
+			}			
+		}
+		case (<= 45) {
+			if (&config(lockMap) != $LVL45) {
+				do conf lockMap $LVL45
+				log $successLog
+				release GrindingTime
+			} else {
+				log $errorLog
+				stop
+			}			
+		}
+		case (<= 55) {
+			if (&config(lockMap) != $LVL55) {
+				do conf lockMap $LVL55
+				log $successLog
+				release GrindingTime
+			} else {
+				log $errorLog
+				stop
+			}
+		}
+		case (<= 65) {
+			if (&config(lockMap) != $LVL65) {
+				do conf lockMap $LVL65
+				log $successLog
+				release GrindingTime
+			} else {
+				log $errorLog
+				stop
+			}			
+		}
+		case (<= 75) {
+			if (&config(lockMap) != $LVL75) {
+				do conf lockMap $LVL75
+				log $successLog
+				release GrindingTime
+			} else {
+				log $errorLog
+				stop
+			}			
+		}
+		case (<= 85) {
+			if (&config(lockMap) != $LVL85) {
+				do conf lockMap $LVL85
+				log $successLog
+				release GrindingTime
+			} else {
+				log $errorLog
+				stop
+			}
+		}
+		case (<= 99) {
+			if (&config(lockMap) != $LVL99) {
+				do conf lockMap $LVL99
+				log $successLog
+				release GrindingTime
+			} else {
+				log $errorLog
+				stop
+			}
+		}
+		else {
+			log GrindingTime: You have reached max level congratulations!
+			stop
+		}
+	}
+}

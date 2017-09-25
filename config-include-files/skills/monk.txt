@@ -1,0 +1,51 @@
+useSelf_skill Heal {
+	lvl 10
+	hp < 80%
+	inLockOnly 1
+}
+
+useSelf_skill Increase AGI {
+	lvl 10
+	whenStatusInactive Increase AGI
+	sp > 10%
+	timeout 30
+}
+
+useSelf_skill Blessing {
+	lvl 10
+	whenStatusInactive Blessing
+	sp > 10%
+	timeout 30
+}
+
+useSelf_skill Angelus {
+	lvl 10
+	whenStatusInactive Angelus
+	sp > 10%
+}
+
+useSelf_skill Summon Spirit Sphere {
+   lvl 5
+   sp > 20
+   spirit < 5
+   notWhileSitting 0
+   inLockOnly 1
+   notInTown 0
+   disabled 0
+}
+
+attackSkillSlot Occult Impactation {
+	lvl 5
+	spirit > 2
+	dist 1
+	monsters 
+	sp > 20%
+}
+
+attackSkillSlot Throw Spirit Sphere {
+   lvl 3
+   spirit > 4
+   dist 1
+   monsters 
+   sp > 20%
+}
