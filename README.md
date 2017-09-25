@@ -22,4 +22,4 @@ Accepting Donations : https://www.paypal.me/iamtonysoft
 - Fixed the issue when not having a bwing or teleclip for iTele macro
 - Fixed autoMoveOnDeath once save on kafra
 - Seperate files for each functions
-- Added logs for every success or failure macro
+- Added log output in console for every success or failure macro
