@@ -8,7 +8,7 @@
 # Simple Guide : copy and paste the content of this text file inside your control/macros.txt
 #				 copy and paste the macro-collection folder inside your control folder
 #								   
-#    Important : remove the # on the lines i commented out inside ai-response.txt to make it work on 
+#    Important : remove the # on the lines i commented out inside ai-*.txt to make it work on 
 #			     each variables like $pubMessage and $pmCaseN
 #
 #       Notice : reply with c = public chat, e = emotion 
