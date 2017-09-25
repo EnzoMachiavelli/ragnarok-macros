@@ -1,0 +1,101 @@
+automacro SomeOneHealYourMonster {
+	console /is casting Heal on monster|uses Heal on monster/i
+	overrideAI 1
+	exclusive 1
+	macro_delay 2
+	run-once 1
+	call {
+		# $pubMessage = @random ("","")
+		
+		# Negative emotion list
+		$negativeEmotes1 = @random ("e swt","e an","e ag","e ...","e wah","e e32")
+		$negativeEmotes2 = @random ("e swt2","e hmm","e omg","e sob","e pif","e e33")
+		$negativeEmotes3 = @random ("e e1","e e5","e e14","e e16","e e18")
+		$negativeEmotes4 = @random ("e e27","e e28","e e29","e e30","e e31")
+		
+		log SomeOneHealYourMonster: Say Something!
+		
+		do conf attackAuto -1
+		do move stop
+		# do $pubMessage
+		# do $negativeEmotes1
+		do move stop
+		do conf attackAuto 2
+		
+		$i = 0
+		while ($i < 3) as loop
+			do eval Utils::Win32::playSound ('C:\wav-files\dont_like_sound.wav')
+			log Alert: SomeOneHealYourMonster !!!
+			$i++
+		end loop
+	}
+	timeout 20
+}
+
+automacro SomeOneBuffYourMonster {
+	console /uses Blessing on monster|uses Increase AGI on monster|uses Assumptio on monster/i
+	overrideAI 1
+	exclusive 1
+	macro_delay 2
+	run-once 1
+	call {
+		# $pubMessage = @random ("","")
+		
+		# Negative emotion list
+		$negativeEmotes1 = @random ("e swt","e an","e ag","e ...","e wah","e e32")
+		$negativeEmotes2 = @random ("e swt2","e hmm","e omg","e sob","e pif","e e33")
+		$negativeEmotes3 = @random ("e e1","e e5","e e14","e e16","e e18")
+		$negativeEmotes4 = @random ("e e27","e e28","e e29","e e30","e e31")
+		
+		log SomeOneBuffYourMonster: Say Something!
+		
+		do conf attackAuto -1
+		do move stop
+		# do $pubMessage
+		# do $negativeEmotes1
+		do move stop
+		do conf attackAuto 2
+		
+		$i = 0
+		while ($i < 3) as loop
+			do eval Utils::Win32::playSound ('C:\wav-files\dont_like_sound.wav')
+			log Sound Alert: SomeOneBuffYourMonster !!!
+			$i++
+		end loop
+	}
+	timeout 20
+}
+
+automacro SomeOneUsesSandman {
+	console /uses Sandman on you/i
+	overrideAI 1
+	exclusive 1
+	macro_delay 2
+	run-once 1
+	call {
+		# $pubMessage = @random ("","")
+		
+		# Negative emotion list
+		$negativeEmotes1 = @random ("e swt","e an","e ag","e ...","e wah","e e32")
+		$negativeEmotes2 = @random ("e swt2","e hmm","e omg","e sob","e pif","e e33")
+		$negativeEmotes3 = @random ("e e1","e e5","e e14","e e16","e e18")
+		$negativeEmotes4 = @random ("e e27","e e28","e e29","e e30","e e31")
+		
+		log SomeOneBuffYourMonster: Say Something!
+		
+		do conf attackAuto -1
+		do move stop
+		# do $pubMessage
+		# do $negativeEmotes1
+		do move stop
+		do conf attackAuto 2
+		
+		$i = 0
+		while ($i < 3) as loop
+			do eval Utils::Win32::playSound ('C:\wav-files\dont_like_sound.wav')
+			log Sound Alert: SomeOneBuffYourMonster !!!
+			$i++
+		end loop
+	}
+	timeout 20
+}

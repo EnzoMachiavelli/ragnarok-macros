@@ -16,8 +16,8 @@ automacro GrindingTime {
 }
 
 macro ChangeGrindMaps {
-	$LVL25 = prt_fild07; $LVL35 = mjolnir_09; $LVL45 = mjolnir_08; $LVL55 = gef_fild02; 
-	$LVL65 = mjolnir_10; $LVL75 = gef_fild14; $LVL85 = c_tower2; $LVL99 = none; 
+	$LVL25 = none; $LVL35 = none; $LVL45 = none; $LVL55 = none; 
+	$LVL65 = none; $LVL75 = none; $LVL85 = none; $LVL99 = none; 
 	
 	$successLog = GrindingTime: set lockMap to &config(lockMap)
 	$errorLog = GrindingTime: lockMap &config(lockMap) was already set!

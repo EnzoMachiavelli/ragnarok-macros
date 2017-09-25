@@ -1,0 +1,157 @@
+#______________________________________________________________________#
+# 										  			   				 
+# AI RED FLAGS	 		   
+#______________________________________________________________________#
+
+automacro StatePecoPeco {
+	console /You are now: Peco Peco|You are now: look: Peco Peco/
+	overrideAI 1
+	exclusive 1
+	macro_delay 2
+	call {
+		[
+			do conf attackAuto -1
+			do conf route_randomWalk 0
+		]
+		
+		# $pubMessage = @random ("","")
+		
+		$negativeEmotes1 = @random ("e swt","e an","e ag","e ...","e wah","e e32")
+		$negativeEmotes2 = @random ("e swt2","e hmm","e omg","e sob","e pif","e e33")
+		$negativeEmotes3 = @random ("e e1","e e5","e e14","e e16","e e18")
+		$negativeEmotes4 = @random ("e e27","e e28","e e29","e e30","e e31")
+		
+		log StatePecoPeco: You are in Danger!
+		
+		# do $pubMessage
+		do move stop
+		# do $negativeEmotes2
+		do move stop
+		
+		$i = 0
+		while ($i < 5) as loop
+			do eval Utils::Win32::playSound ('C:\wav-files\what_the_hell2.wav')
+			log You are now: look: Peco Peco
+			$i++
+		end loop
+		[
+			do conf attackAuto 2
+			do conf route_randomWalk 1
+		]
+	}
+	timeout 600
+}
+
+automacro StateSleep {
+	console /You are now: state: Sleep/
+	overrideAI 1
+	exclusive 1
+	macro_delay 2
+	call {
+		[
+			do conf attackAuto -1
+			do conf route_randomWalk 0
+		]
+		
+		# $pubMessage = @random ("","")
+		
+		$negativeEmotes1 = @random ("e swt","e an","e ag","e ...","e wah","e e32")
+		$negativeEmotes2 = @random ("e swt2","e hmm","e omg","e sob","e pif","e e33")
+		$negativeEmotes3 = @random ("e e1","e e5","e e14","e e16","e e18")
+		$negativeEmotes4 = @random ("e e27","e e28","e e29","e e30","e e31")
+		
+		log StateSleep: You are in Danger!
+		
+		# do $pubMessage
+		do move stop
+		# do $negativeEmotes2
+		do move stop
+		
+		$i = 0
+		while ($i < 5) as loop
+			do eval Utils::Win32::playSound ('C:\wav-files\what_the_hell2.wav')
+			log You are now: state: Sleep
+			$i++
+		end loop
+		[
+			do conf attackAuto 2
+			do conf route_randomWalk 1
+		]
+	}
+	timeout 600
+}
+
+automacro StateSleepRecovered {
+	console /You are no longer: state: Sleep/
+	overrideAI 1
+	exclusive 1
+	macro_delay 2
+	call {
+		[
+			do conf attackAuto -1
+			do conf route_randomWalk 0
+		]
+		
+		# $pubMessage = @random ("","")
+		
+		$negativeEmotes1 = @random ("e swt","e an","e ag","e ...","e wah","e e32")
+		$negativeEmotes2 = @random ("e swt2","e hmm","e omg","e sob","e pif","e e33")
+		$negativeEmotes3 = @random ("e e1","e e5","e e14","e e16","e e18")
+		$negativeEmotes4 = @random ("e e27","e e28","e e29","e e30","e e31")
+		
+		log StateSleepRecovered: You are slightly out of Danger!
+		
+		# do $pubMessage
+		do move stop
+		# do $negativeEmotes2
+		do move stop
+		
+		$i = 0
+		while ($i < 5) as loop
+			do eval Utils::Win32::playSound ('C:\wav-files\what_the_hell2.wav')
+			log You are no longer: state: Sleep
+			$i++
+		end loop
+		[
+			do conf attackAuto 2
+			do conf route_randomWalk 1
+		]
+	}
+	timeout 600
+}
+
+automacro SentToJail {
+	console /^Cannot calculate a route from sec_pri/
+	overrideAI 1
+	exclusive 1
+	macro_delay 5
+	call {
+		[
+			do conf route_randomWalk 0
+			do conf lockMap none
+		]
+		
+		# $pubMessage = @random ("","")
+		
+		$negativeEmotes1 = @random ("e swt","e an","e ag","e ...","e wah","e e32")
+		$negativeEmotes2 = @random ("e swt2","e hmm","e omg","e sob","e pif","e e33")
+		$negativeEmotes3 = @random ("e e1","e e5","e e14","e e16","e e18")
+		$negativeEmotes4 = @random ("e e27","e e28","e e29","e e30","e e31")
+		
+		do ai manual
+		do move stop
+		
+		# do $pubMessage
+		# do $negativeEmotes4
+		
+		log SentToJail: RED ALERT !!! YOU ARE MINUTES FROM GETTING BANNED!
+		
+		$i = 0
+		while ($i < 20) as loop
+			do eval Utils::Win32::playSound ('C:\wav-files\aaaahh.wav')
+			log SentToJail: You are in sec_pri !!!
+			$i++
+		end loop
+	}
+	timeout 600
+}

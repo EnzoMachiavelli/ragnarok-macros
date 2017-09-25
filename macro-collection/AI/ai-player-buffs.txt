@@ -1,0 +1,89 @@
+automacro SomeOneHealYou {
+	console /is casting Heal on you|uses Heal on you/i
+	overrideAI 1
+	exclusive 1
+	run-once 1
+	macro_delay 2
+	call {
+		# $pubMessage = @random ("","")
+		
+		$positiveEmotes1 = @random ("e kis2","e ho","e lv","e lv2","e ic")
+		$positiveEmotes2 = @random ("e thx","e heh","e no1","e kis","e kis2")
+		$positiveEmotes3 = @random ("e e2","e e6","e e8","e e13","e e17")		
+		
+		log SomeOneHealYou: Say Thanks!
+		
+		do move stop
+		# do $pubMessage
+		do move stop
+		# do $positiveEmotes2
+		
+		$i = 0
+		while ($i < 3) as loop
+			do eval Utils::Win32::playSound ('C:\wav-files\dont_like_sound.wav')
+			log Sound Alert: SomeOneHealYou !!!
+			$i++
+		end loop
+	}
+	timeout 20
+}
+
+automacro SomeOneBuffYou {
+	console /uses Blessing on you|uses Increase AGI on you|uses Assumptio on you/i
+	overrideAI 1
+	exclusive 1
+	macro_delay 2
+	run-once 1
+	call {
+		# $pubMessage = @random ("","")
+		
+		$positiveEmotes1 = @random ("e kis2","e ho","e lv","e lv2","e ic")
+		$positiveEmotes2 = @random ("e thx","e heh","e no1","e kis","e kis2")
+		$positiveEmotes3 = @random ("e e2","e e6","e e8","e e13","e e17")
+		
+		log SomeOneBuffYou: Say Thanks!
+		
+		do move stop
+		# do $pubMessage
+		do move stop
+		# do $positiveEmotes3
+		
+		$i = 0
+		while ($i < 3) as loop
+			do eval Utils::Win32::playSound ('C:\wav-files\dont_like_sound.wav')
+			log Sound Alert: SomeOneBuffYou !!!
+			$i++
+		end loop
+	}
+	timeout 20
+}
+
+automacro SomeOneCastStatusRecovery {
+	console /is casting Status Recovery on you/i
+	overrideAI 1
+	exclusive 1
+	macro_delay 2
+	run-once 1
+	call {
+		# $pubMessage = @random ("","")
+		
+		$positiveEmotes1 = @random ("e kis2","e ho","e lv","e lv2","e ic")
+		$positiveEmotes2 = @random ("e thx","e heh","e no1","e kis","e kis2")
+		$positiveEmotes3 = @random ("e e2","e e6","e e8","e e13","e e17")
+		
+		log SomeOneCastStatusRecovery: Say Thanks!
+		
+		do move stop
+		# do $pubMessage
+		do move stop
+		# do $positiveEmotes2
+		
+		$i = 0
+		while ($i < 3) as loop
+			do eval Utils::Win32::playSound ('C:\wav-files\dont_like_sound.wav')
+			log Sound Alert: SomeOneCastStatusRecovery !!!
+			$i++
+		end loop
+	}
+	timeout 20
+}

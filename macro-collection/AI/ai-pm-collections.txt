@@ -1,0 +1,221 @@
+#______________________________________________________#
+# 										  			   
+# PM COLLECTIONS   
+#______________________________________________________#
+
+automacro PM_SayHi {
+	pm /hi|hello|greeting|greetings/i
+	overrideAI 1
+	exclusive 1
+	macro_delay 2
+	run-once 1
+	call {
+		# $pmCase1 = pm "$.lastpm" @random ("","")
+		# $pmCase2 = pm "$.lastpm" @random ("","")
+		
+		log PM SayHi: Send Reply!
+		
+		switch ($.lastpmMsg) {
+			case (=~ /hi|hello/) {
+				do move stop
+				do $pmCase1
+			}
+			case (=~ /greeting|greetings/) {
+				do move stop
+				do $pmCase2
+			}
+		}
+		
+		$i = 0
+		while ($i < 3) as loop
+			do eval Utils::Win32::playSound ('C:\wav-files\talk_good.wav')
+			log Private Message By: $.lastpm
+			$i++
+		end loop
+	}
+	timeout 20
+}
+
+automacro PM_SayAreYouBot {
+	pm /bot|botter|botting/i
+	overrideAI 1
+	exclusive 1
+	macro_delay 2
+	run-once 1
+	call {
+		# $pmCase1 = pm "$.lastpm" @random ("","")
+		# $taunts = @random ("e e4","e gg","e e10","e e15","e e20")
+		
+		log PM SayAreYouBot: Send Reply!
+		
+		switch ($.lastpmMsg) {
+			case (=~ /bot|botter|botting/) {
+				log === [PM_SayAreYouBot] Reply with this idiot!
+				do move stop
+				# do $pmCase1
+				# do $taunts
+				do move stop
+			}
+		}
+		
+		$i = 0
+		while ($i < 3) as loop
+			do eval Utils::Win32::playSound ('C:\wav-files\talk_good.wav')
+			log Private Message By: $.lastpm
+			$i++
+		end loop
+	}
+	timeout 20
+}
+
+automacro PM_SayHowAreYou {
+	pm /how are you/i
+	overrideAI 1
+	exclusive 1
+	macro_delay 2
+	run-once 1
+	call {
+		# $pmCase1 = pm "$.lastpm" @random ("","")
+		
+		log PM SayHowAreYou: Send Reply!
+		
+		switch ($.lastpmMsg) {
+			case (=~ /how are you|how are you today?/) {
+				log === [PM_SayHowAreYou] Send Reply!
+				do move stop
+				# do $pmCase1
+				do move stop
+			}
+		}
+		
+		$i = 0
+		while ($i < 3) as loop
+			do eval Utils::Win32::playSound ('C:\wav-files\talk_good.wav')
+			log Private Message By: $.lastpm
+			$i++
+		end loop
+	}
+	timeout 20
+}
+
+automacro PM_SayPleaseRespond {
+	pm /seems like|you're in afk mode|afk|please respond/i
+	overrideAI 1
+	exclusive 1
+	macro_delay 2
+	run-once 1
+	call {
+		# $pmCase1 = pm "$.lastpm" @random ("","")
+		# $pmCase2 = pm "$.lastpm" @random ("","")
+		
+		log PM SayPleaseRespond: Send Reply!
+		
+		switch ($.lastpmMsg) {
+			case (=~ /please respond/) {
+				do move stop
+				# do $pmCase1
+				do move stop
+			}
+			case (=~ /seems like|seems like you're in afk|afk|seems like you're in afk mode/) {
+				do move stop
+				# do $pmCase2
+				do move stop
+			}
+		}
+		
+		$i = 0
+		while ($i < 3) as loop
+			do eval Utils::Win32::playSound ('C:\wav-files\talk_good.wav')
+			log Private Message By: $.lastpm
+			$i++
+		end loop
+	}
+	timeout 20
+}
+
+automacro PM_SayNumbers {
+	pm /10|[0-9]/i
+	overrideAI 1
+	exclusive 1
+	macro_delay 2
+	run-once 1
+	call {
+		# $pmCase1 = pm "$.lastpm" @random ("","")
+		
+		log PM SayNumbers: Send Reply!
+		
+		switch ($.lastpmMsg) {
+			case (=~ /10|[0-9]/) {
+				do move stop
+				# do $pmCase1
+				do move stop
+			}
+		}
+		
+		$i = 0
+		while ($i < 3) as loop
+			do eval Utils::Win32::playSound ('C:\wav-files\talk_good.wav')
+			log Private Message By: $.lastpm
+			$i++
+		end loop
+	}
+	timeout 20
+}
+
+automacro PM_ThrowRandomQuestion {
+	pm /can you answer|question|questions/i
+	overrideAI 1
+	exclusive 1
+	macro_delay 2
+	run-once 1
+	call {
+		# $pmCase1 = pm "$.lastpm" @random ("","")
+		
+		log PM ThrowRandomQuestion: Send Reply!
+		
+		switch ($.lastpmMsg) {
+			case (=~ /can you answer|question|questions/) {
+				do move stop
+				# do $pmCase1
+				do move stop
+			}
+		}
+		
+		$i = 0
+		while ($i < 3) as loop
+			do eval Utils::Win32::playSound ('C:\wav-files\talk_good.wav')
+			log Private Message By: $.lastpm
+			$i++
+		end loop
+	}
+	timeout 20
+}
+
+automacro PM_SayWhatIsMyName { 
+	pm /what is my name/i
+	overrideAI 1
+	exclusive 1
+	macro_delay 2
+	run-once 1
+	call {
+		# $pmCase1 = pm "$.lastpm" $.lastpm
+		
+		log PM SayWhatIsMyName: Send Reply!
+		
+		switch ($.lastpmMsg) {
+			case (=~ /what is my name/) {
+				do move stop
+				# do $pmCase1
+				do move stop
+			}
+		}
+		
+		$i = 0
+		while ($i < 3) as loop
+			do eval Utils::Win32::playSound ('C:\wav-files\talk_good.wav')
+			log Private Message By: $.lastpm
+			$i++
+		end loop
+	}
+	timeout 20
+}
